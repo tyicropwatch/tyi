@@ -10,325 +10,82 @@
         <title>台灣監督企業青年行動</title>              
 
         <style>
-            body {
-                overflow-x: hidden; 
-                margin: 0; 
-            }           
-            html{                                       
-                -webkit-text-size-adjust:100%;
+            body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
             }
-            .container {
-                display: flex;
-                width: 100%;  
-            }
-            .left {
-                flex: 1; 
-                max-width: 50%; 
-            }
-            .right {
-                flex: 1; 
-                max-width: 50%;
-            }
-            .home-link{
-                position: relative;
-                top: 1px;
-                width: 10%;
-                left:200px;
-                z-index:1000;                  
-                display:block;  
-                cursor:pointer;
-            }
-            .button1{
-                display:inline-block;
-                position: relative;
-                top:40px;
-                left:1px;
-                padding:10px 20px;
-                margin:5px;
-                font-size:20px;
-                font-weight:bold;
-                background-color:white;
-                color:black;
-                border-radius: 10px;
-            }
-            .button1:hover{
-                background-color:gray;
-                color:black;
-                cursor:pointer;
-            }
-            .outside{                       
-                position:relative;
-                width:100%;
-                height: 440px;
-                margin:0 auto;
-                border:none;
-                overflow: hidden;
-            }
-            .img{
-                width: 100%; 
-                height: 500px;
-            }
-            .pic{
-                display: none;
-            }
-            .serial{
-                position:absolute;
-                top:10px;
-                left:10px;
-                background-color:transparent;
-            }
-            .prev{
-                cursor:pointer;
-                position:absolute;
-                left:5px;
-                top:50%;
-                margin-top:-20px;
-                background-color:rgba(0,0,0,0.1);
-                color:white;
-                transition:background-color 0.5s;
-            }
-            .next{
-                cursor:pointer;
-                position:absolute;
-                right:5px;
-                top:50%;
-                margin-top:-20px;
-                background-color:rgba(0,0,0,0.1);
-                color:white;
-                transition:background-color 0.5s;
-            }
-            .prev:hover,next:hover{
-                background-color:transparent;
-            }
-            .logo{
-                height: 120px !important;
-            }
-            .section1{
-                position:relative;
-                background-color:#DCDCDC;
-                top: -31px;
-                height:400px;
-            }
-            .bigtext{
-                font-size: 30px;  
-                font-weight: bold;
-                padding-left: 500px;
-                padding-top: 85px; 
-
-            }
-            .normaltext{
-                font-size: 20px;
-                padding-left: 448px;
-            }
-            .normaltext1{
-                font-size: 20px;
-                padding-left: 250px;
-            }
-            .section2{
-                position:relative;
-                background-color:#FFFFFF;
-                height:400px;
-            }
-            .movetoright{
-                padding-left: 260px;
-            }
-            .textmove1{
-                position:relative;
-                padding-left: 245px;
-                font-size: 30px;  
-                font-weight: bold;
-                top:-20px;
-            }
-            .textmove2{
-                position:relative;
-                padding-left: 215px;
-                font-size: 30px;  
-                font-weight: bold;
-                top:-20px;
-            }
-            .section3{
-                position:relative;
-                top:-10px;
-                background-color:#DCDCDC;
-                height:800px;
-            }
-            .big{
-                position:relative;
-                font-size: 50px;  
-                top:15px;
-                padding-left: 100px;
-            }
-            .morearticle{
-                position: relative;
-                top:90px;
-                left:550px;
-                padding:5px 10px;
-                margin:5px;
-                font-size:15px;
-                font-weight:bold;
-                background-color:#DCDCDC;
-                color:black;
-                border-radius: 1px;
-            }
-            .morearticle:hover{
-                background-color:gray;
-                color:#DCDCDC;
-                cursor:pointer;
-            }
-            .p1{
-                position: relative;
-                left:100px;
-                font-size:20px;
-            }
-            .readmore{
-                position: relative;
-                top:-10px;
-                margin:5px;
-                font-size:15px;
-                padding:5px 10px;
-                font-weight:bold;
-                background-color:#DCDCDC;
-                color:black;
-                border-radius: 1px;
-            }
-            .readmore:hover{
-                background-color:gray;
-                color:#DCDCDC;
-                cursor:pointer;
-            }
-            .section4{
-                position:relative;
-                top: -40px;
-                background-color:#000000;
-                padding:20px;
-                height:auto;
-            }
-            .footer {                                     
-                display: flex;
-                padding: 20px 50px;
-                border-top: 1px solid #666;             /* black line */
-                min-width: 800px;
-            }
-            .footer-left {
-                flex: 1 1 40%;          /* constant usage | the left account for 40% */
-            }
-            .footer-left iframe {         
-                max-width: 400px;       /*the frame of fb*/
-                height: 500px;
-                border: none;
-            }
-            .footer-right {
-                flex: 1 1 50%; 
-                padding-left: 20px;
-                color: #ffffff; 
-                background-color: #000000; 
-                overflow: visible;          /* prevent the content be cut*/
-            }
-            .social-icons {
-                margin-top: 20px;
-            }
-            .social-icons a {      
-                display: inline-block;
-                margin-right: 10px;
-                color: #fff;
-                text-decoration: none;  /* remove downline */
-                font-size: 20px;
-            }
-            .copyright {
-                text-align: center;
-                margin: 20px 0;
-                font-size: 14px;
-                color: #999;
-            }
-            a {
-                text-decoration: none;
-                margin: 0;
-                padding: 0;
-            }
-            @media screen and (max-width: 768px) {
-                /* ======== 讓整體容器改為垂直排列 ======== */
-                .container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
-                }
             
-                /* ======== 讓導覽按鈕變成垂直排列 ======== */
+            /* 讓 container 內容在手機上改為垂直排列 */
+            .container {
+            display: flex;
+            flex-wrap: wrap; /* 讓內容在小螢幕時自動換行 */
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            }
+            
+            /* 導覽列按鈕 */
+            .right {
+            display: flex;
+            flex-direction: row; /* 電腦版保持橫向排列 */
+            justify-content: center;
+            }
+            .button1 {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 18px;
+            margin: 5px;
+            width: auto;
+            }
+            
+            /* 響應式設計 */
+            @media screen and (max-width: 768px) {
+                /* 讓導覽按鈕變成直列排列 */
                 .right {
-                    display: flex;
                     flex-direction: column;
-                    align-items: center;
                     width: 100%;
-                    margin-top: 10px;
+                    align-items: center;
                 }
                 .button1 {
-                    display: block;
                     width: 80%;
-                    font-size: 18px;
-                    margin: 10px auto;
-                    text-align: center;
+                    font-size: 16px;
                 }
-            
-                /* ======== 讓 "關於我們"、"文章"、"行動" 的按鈕置中 ======== */
-                .right a {
-                    width: 100%;
-                    text-align: center;
+                
+                /* 讓 .container 內容垂直排列 */
+                .container {
+                    flex-direction: column;
+                    align-items: center;
                 }
-            
-                /* ======== 讓 section1 文字置中，避免偏左 ======== */
-                .bigtext, .normaltext, .normaltext1 {
+                
+                /* 修正圖片區域 */
+                .movetoright {
                     text-align: center;
-                    padding-left: 10px;
-                    padding-right: 10px;
+                    padding-left: 0;
                 }
-            
-                /* ======== 讓兩張圖片上下排列 ======== */
+                
+                /* 讓兩張圖片上下排列 */
                 .section2 .container {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    text-align: center;
                 }
-                .movetoright {
-                    padding-left: 0;
-                    text-align: center;
-                }
-                .textmove1, .textmove2 {
-                    padding-left: 0;
-                    text-align: center;
-                    font-size: 20px;
-                    margin-top: 10px;
-                }
-            
-                /* ======== 圖片大小適應手機，不超出畫面 ======== */
                 img {
                     max-width: 100%;
                     height: auto;
                 }
-            
-                /* ======== 讓 "更多文章" 按鈕置中 ======== */
-                .morearticle {
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 80%;
-                    font-size: 16px;
+                
+                /* 讓文字置中 */
+                .bigtext, .normaltext, .normaltext1 {
                     text-align: center;
+                    padding: 10px;
                 }
-            
-                /* ======== 讓 footer 變成垂直排列 ======== */
+                
+                /* 修正 footer */
                 .footer {
                     flex-direction: column;
-                    align-items: center;
-                    min-width: auto;
                     text-align: center;
-                }
-            
-                /* 限制 iframe (Facebook plugin) 避免超出 */
-                .footer-left iframe {
-                    max-width: 100%;
-                    height: 300px;
                 }
             }
         </style>
