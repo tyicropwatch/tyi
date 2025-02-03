@@ -246,33 +246,54 @@
                 padding: 0;
             }
             @media screen and (max-width: 768px) {
-                .right {
+                /* ======== 讓整體容器改為垂直排列 ======== */
+                .container {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
+                    width: 100%;
+                }
+            
+                /* ======== 讓導覽按鈕變成垂直排列 ======== */
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: 10px;
                 }
                 .button1 {
                     display: block;
                     width: 80%;
                     font-size: 18px;
                     margin: 10px auto;
+                    text-align: center;
                 }
+            
+                /* ======== 讓 "關於我們"、"文章"、"行動" 的按鈕置中 ======== */
                 .right a {
                     width: 100%;
                     text-align: center;
                 }
-                .container {
+            
+                /* ======== 讓 section1 文字置中，避免偏左 ======== */
+                .bigtext, .normaltext, .normaltext1 {
+                    text-align: center;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            
+                /* ======== 讓兩張圖片上下排列 ======== */
+                .section2 .container {
+                    display: flex;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
                 }
-                .left, .right {
-                    max-width: 100%;
-                    text-align: center;
-                }
                 .movetoright {
                     padding-left: 0;
+                    text-align: center;
                 }
                 .textmove1, .textmove2 {
                     padding-left: 0;
@@ -280,25 +301,34 @@
                     font-size: 20px;
                     margin-top: 10px;
                 }
+            
+                /* ======== 圖片大小適應手機，不超出畫面 ======== */
                 img {
                     max-width: 100%;
                     height: auto;
                 }
+            
+                /* ======== 讓 "更多文章" 按鈕置中 ======== */
                 .morearticle {
-                    position: relative;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 80%;
                     font-size: 16px;
                     text-align: center;
                 }
+            
+                /* ======== 讓 footer 變成垂直排列 ======== */
                 .footer {
                     flex-direction: column;
+                    align-items: center;
                     min-width: auto;
                     text-align: center;
                 }
+            
+                /* 限制 iframe (Facebook plugin) 避免超出 */
                 .footer-left iframe {
                     max-width: 100%;
+                    height: 300px;
                 }
             }
         </style>
