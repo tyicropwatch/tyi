@@ -5,12 +5,12 @@
         <meta name="description" content="台灣監督企業青年行動的官網" />    
         <meta name="author" content="haku" />              
         <meta name="keywords" content="勞工權益,台監青,台灣監督企業青年行動,勞動部,中鋼,工學聯合,社會運動" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" href="logo.jpg" type="image/jpg">
         <title>台灣監督企業青年行動</title>              
 
         <style>
-            body {
+             body {
                 overflow-x: hidden; 
                 margin: 0; 
             }           
@@ -26,19 +26,19 @@
                 max-width: 50%; 
             }
             .right {
-                flex: 1; 
-                max-width: 50%;
+                flex: 1;
+                margin-top: 20px; /* 增加间距 */
             }
             .home-link{
                 position: relative;
                 top: 1px;
                 width: 10%;
-                left:100px;
+                left:200px;
                 z-index:1000;                  
                 display:block;  
                 cursor:pointer;
             }
-            .button1{
+            .button1 {
                 display:inline-block;
                 position: relative;
                 top:35px;
@@ -56,20 +56,40 @@
                 color:black;
                 cursor:pointer;
             }
-            .outside{                       
-                position:relative;
-                width:100%;
-                height: 440px;
-                margin:0 auto;
-                border:none;
+            .readmore {
+                display:inline-block;
+                position: relative;
+                top:-10px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:14px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .readmore:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+            .outside {
+                position: relative;
+                width: 100%;
+                height: 440px; /* 高度自适应 */
+                margin: 0 auto;
+                border: none;
                 overflow: hidden;
             }
-            .img{
-                width: 100%; 
+                
+            .img {
+                width: 100%;
                 height: 500px;
             }
             .pic{
                 display: none;
+                width:100%;
             }
             .serial{
                 position:absolute;
@@ -103,54 +123,63 @@
             .logo{
                 height: 120px !important;
             }
-            .section1{
-                position:relative;
-                background-color:#DCDCDC;
-                top: -31px;
-                height:400px;
+            .big {
+                position: relative;
+                font-size: 40px; /* 缩小字体 */
+                top: 15px;
+                padding-left: 0; /* 移除偏移 */
+                text-align: center; /* 文字居中 */
+                margin: 0 auto; /* 居中 */
             }
-            .bigtext{
-                font-size: 30px;  
+            .bigtext {
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 30px; /* 手机字体缩小 */
                 font-weight: bold;
-                padding-left: 500px;
-                padding-top: 85px; 
-
+                padding-top: 85px;
+                max-width: 90%; /* 限制宽度 */
+                margin: 0 auto; /* 居中 */
             }
             .normaltext{
-                font-size: 20px;
-                padding-left: 448px;
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 20px; /* 手机字体缩小 */
+                margin: 0 auto; /* 居中 */
             }
-            .normaltext1{
-                font-size: 20px;
-                padding-left: 250px;
+            .normaltext1 {
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 20px; /* 手机字体缩小 */
+                margin: 0 auto; /* 居中 */
+            }
+            .section1 {
+                position: relative;
+                background-color: #DCDCDC;
+                height: 400px; /* 高度自适应 */
+                padding: 20px 0; /* 增加内边距 */
             }
             .section2{
                 position:relative;
                 background-color:#FFFFFF;
                 height:400px;
             }
-            .movetoright{
-                padding-left: 260px;
+            .movetoright {
+                padding-left: 0; /* 改为 margin 或 text-align */
+                text-align: center;
             }
-            .textmove1{
-                position:relative;
-                padding-left: 245px;
-                font-size: 30px;  
-                font-weight: bold;
-                top:-20px;
-            }
-            .textmove2{
-                position:relative;
-                padding-left: 215px;
-                font-size: 30px;  
-                font-weight: bold;
-                top:-20px;
+            .textmove1, .textmove2 {
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 24px; /* 手机字体缩小 */
+                margin: 0 auto; /* 居中 */
+                top: 0; /* 移除偏移 */
             }
             .section3{
-                position:relative;
-                top:-10px;
-                background-color:#DCDCDC;
-                height:800px;
+                position: relative;
+                top: -10px;
+                background-color: #DCDCDC;
+                height: 800px; /* 高度自适应 */
+                padding-bottom: 20px; /* 增加底部内边距 */
             }
             .big{
                 position:relative;
@@ -175,26 +204,14 @@
                 color:#DCDCDC;
                 cursor:pointer;
             }
-            .p1{
+            .p1 {
                 position: relative;
-                left:100px;
-                font-size:20px;
+                left: 10%; /* 移除偏移 */
+                max-width: 90%; /* 限制宽度 */
             }
-            .readmore{
-                position: relative;
-                top:-10px;
-                margin:5px;
-                font-size:15px;
-                padding:5px 10px;
-                font-weight:bold;
-                background-color:#DCDCDC;
-                color:black;
-                border-radius: 1px;
-            }
-            .readmore:hover{
-                background-color:gray;
-                color:#DCDCDC;
-                cursor:pointer;
+            .p1 img {
+                width: 20%; /* 图片占满宽度 */
+                height: auto; /* 高度自适应 */
             }
             .section4{
                 position:relative;
@@ -202,12 +219,14 @@
                 background-color:#000000;
                 padding:20px;
                 height:auto;
+                width:auto;
             }
             .footer {                                     
-                display: flex;
-                padding: 20px 50px;
-                border-top: 1px solid #666;             /* black line */
-                min-width: 670px;
+                 display: flex;
+                 padding: 20px 50px;
+                 padding: 20px 50px;
+                 border-top: 1px solid #666;             /* black line */
+                 width:auto;
             }
             .footer-left {
                 flex: 1 1 40%;          /* constant usage | the left account for 40% */
@@ -222,7 +241,7 @@
                 padding-left: 20px;
                 color: #ffffff; 
                 background-color: #000000; 
-                overflow: visible;          /* prevent the content be cut*/
+                overflow: visible;
             }
             .social-icons {
                 margin-top: 20px;
@@ -245,32 +264,59 @@
                 margin: 0;
                 padding: 0;
             }
-        </style>
-        <script>                           
-            var pic,now=0,num=4;
-            window.onload=function(){
-                pics=document.getElementsByClassName("pic");
-                show(now);
-            }
-            function show(i){
-                now=i;
-                for(var k=0;k<pics.length;k++){
-                    pics[k].style.display="none";
+            @media (max-width: 768px) {
+                /* 强制所有区块垂直排列 */
+                .container {
+                    flex-direction: row;
                 }
-                pics[now].style.display="block";
+                .left, .right {
+                    max-width: 100% !important;
+                }
+                
+                /* 隐藏桌面专用元素 */
+                .serial, .prev, .next {
+                    display: none;
+                }
+                
+                /* 调整文章页图片 */
+                .center img {
+                    width: 100% !important;
+                    height: auto !important;
+                    left: 0 !important;
+                }
+                .textmove1, .textmove2 {
+                font-size: 20px; /* 进一步缩小字体 */
+                }
+                .big {
+                    font-size: 30px; /* 进一步缩小字体 */
+                }
             }
-            function next(){
-                now+=1;
-                if(now>3)
-                    now=0;
-                show(now);
-            }
-            function prev(){
-                now-=1;
-                if(now<0)
-                    now=num-1;
-                show(now);
-            }
+            </style>
+            <script>                           
+                var pic,now=0,num=4;
+                window.onload=function(){
+                    pics=document.getElementsByClassName("pic");
+                    show(now);
+                }
+                function show(i){
+                    now=i;
+                    for(var k=0;k<pics.length;k++){
+                        pics[k].style.display="none";
+                    }
+                    pics[now].style.display="block";
+                }
+                function next(){
+                    now+=1;
+                    if(now>3)
+                        now=0;
+                    show(now);
+                }
+                function prev(){
+                    now-=1;
+                    if(now<0)
+                        now=num-1;
+                    show(now);
+                }
         </script>
     </head>
     <body>                              
@@ -315,8 +361,8 @@
         </div>
 
         <div class="section1">
-            <p class="bigtext">我們是台灣監督企業青年行動<br><br></p>
-            <p class="normaltext">我們是來自各個大學的學生，在各個學校舉辦宣講、聲援，</p>
+            <p class="bigtext">我們是台灣監督企業青年行動<br><br><br><br></p>
+            <p class="normaltext">我們是來自各個大學的學生，在各個學校舉辦宣講、聲援，</p><br>
             <p class="normaltext1">讓更多學生能夠瞭解到台灣的勞資權力不對等、勞工受壓迫和被壓榨的情況，改變社會現狀，改變不合理的制度。</p>
         </div>
 
@@ -324,7 +370,7 @@
             <div class="container">
                 <div class="left">
                     <div class="movetoright">
-                        <img src="協商.png" height="250" width=auto/>
+                        <img src="協商.png" height="250" width="300"/>
                     </div>
                     <div class="textmove1">
                         <p>協商取得合法薪資與福利</p>
@@ -357,7 +403,8 @@
                 </div>   
             </div>
             <div class="p1">
-                <img src="何.png" height="400" width=auto/>
+                <img src="何.png" height=auto
+                    width=auto/>
                 <p>文章|觀點投書：與其一再迴避職責，<br>
                 何佩珊部長何不知所進退？<br><br>
                 2024/11/18</p>
@@ -374,7 +421,7 @@
                 <div class="footer-left">
                     <div class="fb-page" 
                         data-href="https://www.facebook.com/profile.php?id=61567452682767" 
-                        data-width=auto
+                        data-width="300" 
                         data-height="300" 
                         data-small-header="false" 
                         data-adapt-container-width="true" 
