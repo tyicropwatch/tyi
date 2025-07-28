@@ -5,94 +5,79 @@
         <meta name="description" content="台灣監督企業青年行動的官網" />    
         <meta name="author" content="haku" />              
         <meta name="keywords" content="勞工權益,台監青,台灣監督企業青年行動,勞動部,中鋼,工學聯合,社會運動" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" href="logo.jpg" type="image/jpg">
         <title>台灣監督企業青年行動</title>              
 
         <style>
-            * {
-                box-sizing: border-box;
-            }
-            
-            body {
+             body {
                 overflow-x: hidden; 
                 margin: 0; 
-                padding: 0;
-                font-family: Arial, sans-serif;
             }           
-            
-            html {                                       
-                -webkit-text-size-adjust: 100%;
+            html{                                       
+                -webkit-text-size-adjust:100%;
             }
-            
             .container {
                 display: flex;
-                width: 100%;
-                align-items: center;
-                padding: 0 10px;
+                width: 100%;  
             }
-            
             .left {
                 flex: 1; 
                 max-width: 50%; 
             }
-            
             .right {
                 flex: 1; 
                 max-width: 50%;
-                text-align: right;
             }
-            
-            .home-link {
+            .home-link{
                 position: relative;
-                width: 120px;
-                max-width: 100%;
-                display: block;  
-                cursor: pointer;
+                top: 1px;
+                width: 10%;
+                left:200px;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
             }
-            
             .button1 {
-                display: inline-block;
-                padding: 10px 15px;
-                margin: 5px;
-                font-size: 16px;
-                font-weight: bold;
-                background-color: white;
-                color: black;
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
                 border-radius: 10px;
-                border: none;
-                cursor: pointer;
-                transition: all 0.3s ease;
             }
-            
-            .button1:hover {
-                background-color: gray;
-                color: white;
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
             }
-            
             .readmore {
-                display: inline-block;
-                padding: 8px 16px;
-                margin: 5px;
-                font-size: 14px;
-                font-weight: bold;
-                background-color: white;
-                color: black;
+                display:inline-block;
+                position: relative;
+                top:-10px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:14px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
                 border-radius: 10px;
-                border: none;
-                cursor: pointer;
-                transition: all 0.3s ease;
             }
-            
-            .readmore:hover {
-                background-color: gray;
-                color: white;
+            .readmore:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
             }
-            
             .outside {
                 position: relative;
                 width: 100%;
-                height: 400px;
+                height: 440px; /* 高度自适应 */
                 margin: 0 auto;
                 border: none;
                 overflow: hidden;
@@ -100,256 +85,371 @@
                 
             .img {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                height: 500px;
             }
-            
-            .pic {
+            .pic{
                 display: none;
-                width: 100%;
-                height: 100%;
+                width:100%;
             }
-            
-            .serial {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                background-color: rgba(0,0,0,0.5);
-                color: white;
-                padding: 5px 10px;
-                border-radius: 5px;
-                z-index: 10;
+            .serial{
+                position:absolute;
+                top:10px;
+                left:10px;
+                background-color:transparent;
             }
-            
-            .prev, .next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(0,0,0,0.5);
-                color: white;
-                padding: 15px 20px;
-                font-size: 18px;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-                z-index: 10;
+            .prev{
+                cursor:pointer;
+                position:absolute;
+                left:5px;
+                top:50%;
+                margin-top:-20px;
+                background-color:rgba(0,0,0,0.1);
+                color:white;
+                transition:background-color 0.5s;
             }
-            
-            .prev {
-                left: 10px;
+            .next{
+                cursor:pointer;
+                position:absolute;
+                right:5px;
+                top:50%;
+                margin-top:-20px;
+                background-color:rgba(0,0,0,0.1);
+                color:white;
+                transition:background-color 0.5s;
             }
-            
-            .next {
-                right: 10px;
+            .prev:hover,next:hover{
+                background-color:transparent;
             }
-            
-            .prev:hover, .next:hover {
-                background-color: rgba(0,0,0,0.8);
+            .logo{
+                height: 120px !important;
             }
-            
-            .logo {
-                height: 80px;
-                width: auto;
-                max-width: 100%;
-            }
-            
             .big {
-                font-size: clamp(24px, 5vw, 50px);
-                text-align: center;
-                margin: 20px 0;
-                padding: 0 20px;
+                position: relative;
+                font-size: 40px; /* 缩小字体 */
+                top: 15px;
+                padding-left: 0; /* 移除偏移 */
+                text-align: center; /* 文字居中 */
+                margin: 0 auto; /* 居中 */
             }
-            
             .bigtext {
-                text-align: center;
-                font-size: clamp(20px, 4vw, 30px);
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 30px; /* 手机字体缩小 */
                 font-weight: bold;
-                padding: 40px 20px 20px;
-                margin: 0;
-                line-height: 1.4;
+                padding-top: 85px;
+                max-width: 90%; /* 限制宽度 */
+                margin: 0 auto; /* 居中 */
             }
-            
-            .normaltext, .normaltext1 {
-                text-align: center;
-                font-size: clamp(16px, 3vw, 20px);
-                margin: 0 auto;
-                padding: 10px 20px;
-                line-height: 1.5;
-                max-width: 800px;
+            .normaltext{
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 20px; /* 手机字体缩小 */
+                margin: 0 auto; /* 居中 */
             }
-            
+            .normaltext1 {
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 20px; /* 手机字体缩小 */
+                margin: 0 auto; /* 居中 */
+            }
             .section1 {
+                position: relative;
                 background-color: #DCDCDC;
-                padding: 40px 0;
-                min-height: 300px;
+                height: 400px; /* 高度自适应 */
+                padding: 20px 0; /* 增加内边距 */
             }
-            
-            .section2 {
-                background-color: #FFFFFF;
-                padding: 40px 0;
-                min-height: 300px;
+            .section2{
+                position:relative;
+                background-color:#FFFFFF;
+                height:400px;
             }
-            
             .movetoright {
+                padding-left: 0; /* 改为 margin 或 text-align */
                 text-align: center;
-                padding: 20px;
             }
-            
-            .movetoright img {
-                max-width: 100%;
-                height: auto;
-                max-height: 200px;
-            }
-            
             .textmove1, .textmove2 {
-                text-align: center;
-                font-size: clamp(16px, 3vw, 24px);
-                margin: 0;
-                padding: 20px;
-                font-weight: bold;
+                padding-left: 0; /* 移除固定偏移 */
+                text-align: center; /* 文字居中 */
+                font-size: 24px; /* 手机字体缩小 */
+                margin: 0 auto; /* 居中 */
+                top: 0; /* 移除偏移 */
             }
-            
-            .section3 {
+            .section3{
+                position: relative;
+                top: -10px;
                 background-color: #DCDCDC;
-                padding: 40px 0;
-                min-height: 400px;
+                height: 800px; /* 高度自适应 */
+                padding-bottom: 20px; /* 增加底部内边距 */
             }
-            
-            .hero-image {
-                width: 100%;
-                height: auto;
-                display: block;
+            .big{
+                position:relative;
+                font-size: 50px;  
+                top:15px;
+                padding-left: 100px;
             }
-            
-            .morearticle {
-                padding: 10px 20px;
-                margin: 20px;
-                font-size: clamp(14px, 2.5vw, 20px);
-                font-weight: bold;
-                background-color: #DCDCDC;
-                color: black;
-                border: 2px solid black;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: all 0.3s ease;
+            .morearticle{
+                position: relative;
+                top:100px;
+                left:65%;
+                padding:5px 10px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:black;
+                border-radius: 1px;
             }
-            
-            .morearticle:hover {
-                background-color: gray;
-                color: white;
+            .morearticle:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
             }
-            
             .p1 {
-                max-width: 90%;
-                margin: 40px auto;
-                padding: 0 20px;
-                text-align: center;
+                position: relative;
+                left: 10%; /* 移除偏移 */
+                max-width: 90%; /* 限制宽度 */
             }
-            
             .p1 img {
-                width: 100%;
-                max-width: 200px;
-                height: auto;
-                margin-bottom: 20px;
+                width: 20%; /* 图片占满宽度 */
+                height: auto; /* 高度自适应 */
             }
-            
-            .p1 p {
-                font-size: clamp(14px, 2.5vw, 18px);
-                line-height: 1.5;
-                margin: 20px 0;
+            .section4{
+                position:relative;
+                top: -5px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+                width:auto;
             }
-            
-            .section4 {
-                background-color: #000000;
-                padding: 40px 0;
-                color: white;
+            .footer {                                     
+                 display: flex;
+                 padding: 20px 50px;
+                 padding: 20px 50px;
+                 border-top: 1px solid #666;             /* black line */
+                 width:auto;
             }
-            
-            .footer {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 20px;
-                gap: 20px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            
             .footer-left {
-                flex: 1;
-                min-width: 300px;
+                flex: 1 1 40%;          /* constant usage | the left account for 40% */
             }
-            
-            .footer-left iframe {
-                width: 100%;
-                max-width: 400px;
-                height: 300px;
+            .footer-left iframe {         
+                max-width: 400px;       /*the frame of fb*/
+                height: 500px;
                 border: none;
             }
-            
             .footer-right {
-                flex: 1;
-                min-width: 300px;
+                flex: 1 1 50%; 
                 padding-left: 20px;
-                color: #ffffff;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible;
             }
-            
-            .footer-right h2 {
-                font-size: clamp(18px, 3vw, 24px);
-                margin-bottom: 20px;
-            }
-            
-            .footer-right p {
-                font-size: clamp(14px, 2.5vw, 16px);
-                margin: 10px 0;
-            }
-            
             .social-icons {
                 margin-top: 20px;
             }
-            
-            .social-icons a {
+            .social-icons a {      
                 display: inline-block;
-                margin-right: 15px;
+                margin-right: 10px;
                 color: #fff;
-                text-decoration: none;
-                font-size: clamp(16px, 2.5vw, 20px);
-                transition: color 0.3s ease;
+                text-decoration: none;  /* remove downline */
+                font-size: 20px;
             }
-            
-            .social-icons a:hover {
-                color: #ccc;
-            }
-            
             .copyright {
                 text-align: center;
                 margin: 20px 0;
-                font-size: clamp(12px, 2vw, 14px);
+                font-size: 14px;
                 color: #999;
-                padding: 0 20px;
             }
-            
             a {
                 text-decoration: none;
                 margin: 0;
                 padding: 0;
             }
-
-            /* 平板電腦 (768px - 1024px) */
-            @media (max-width: 1024px) {
+            @media (max-width: 768px) {
+                /* 强制所有区块垂直排列 */
                 .container {
-                    padding: 0 15px;
+                    flex-direction: row;
+                }
+                .left, .right {
+                    max-width: 100% !important;
                 }
                 
-                .logo {
-                    height: 70px;
+                /* 隐藏桌面专用元素 */
+                .serial, .prev, .next {
+                    display: none;
                 }
                 
-                .button1 {
-                    padding: 8px 12px;
-                    font-size: 14px;
-                    margin: 3px;
+                /* 调整文章页图片 */
+                .center img {
+                    width: 100% !important;
+                    height: auto !important;
+                    left: 0 !important;
                 }
+                .textmove1, .textmove2 {
+                font-size: 20px; /* 进一步缩小字体 */
+                }
+                .big {
+                    font-size: 30px; /* 进一步缩小字体 */
+                }
+            }
+            </style>
+            <script>                           
+                var pic,now=0,num=4;
+                window.onload=function(){
+                    pics=document.getElementsByClassName("pic");
+                    show(now);
+                }
+                function show(i){
+                    now=i;
+                    for(var k=0;k<pics.length;k++){
+                        pics[k].style.display="none";
+                    }
+                    pics[now].style.display="block";
+                }
+                function next(){
+                    now+=1;
+                    if(now>3)
+                        now=0;
+                    show(now);
+                }
+                function prev(){
+                    now-=1;
+                    if(now<0)
+                        now=num-1;
+                    show(now);
+                }
+        </script>
+    </head>
+    <body>                              
+        <div class="container">
+            <div class="left">
+                <a href="main.html" class="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+                                  
+        <div class="outside">                 
+            <div class="pic">
+                <div class="serial">1/4</div>
+                <img class="img" src="投影片1.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">2/4</div>
+                <img class="img" src="投影片2.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">3/4</div>
+                <img class="img" src="投影片3.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">4/4</div>
+                <img class="img" src="投影片4.jpg">
+            </div>
+            <div class="prev" onclick="prev()">&lt</div>
+            <div class="next" onclick="next()">&gt</div>
+        </div>
+
+        <div class="section1">
+            <p class="bigtext">我們是台灣監督企業青年行動<br><br><br><br></p>
+            <p class="normaltext">我們是來自各個大學的學生，在各個學校舉辦宣講、聲援，</p><br>
+            <p class="normaltext1">讓更多學生能夠瞭解到台灣的勞資權力不對等、勞工受壓迫和被壓榨的情況，改變社會現狀，改變不合理的制度。</p>
+        </div>
+
+        <div class="section2">
+            <div class="container">
+                <div class="left">
+                    <div class="movetoright">
+                        <img src="協商.png" height="250" width="300"/>
+                    </div>
+                    <div class="textmove1">
+                        <p>協商取得合法薪資與福利</p>
+                    </div> 
+                </div>
+                <div class="right">
+                    <div class="movetoright">
+                        <img src="勞權.png" height="250" width=auto/>
+                    </div>
+                    <div class="textmove2">
+                        <p>各大專院校宣講實現工學聯合</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="抗爭.jpg" height=auto width=100%/>
+
+        <div class="section3">
+            <div class="container">
+                <div class="left">
+                    <div class="big">
+                        <p>相關文章</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="文章.html">
+                        <button class="morearticle">更多文章</button>
+                    </a>
+                </div>   
+            </div>
+            <div class="p1">
+                <img src="何.png" height=auto
+                    width=auto/>
+                <p>文章|觀點投書：與其一再迴避職責，<br>
+                何佩珊部長何不知所進退？<br><br>
+                2024/11/18</p>
+                <div>
+                    <a href="文章1.html">
+                        <button class="readmore">閱讀更多</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section4">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="300" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
                 
-                .outside {
-                    height: 300px;
-                }
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              <!--JavaScript (Facebook attachment)-->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
